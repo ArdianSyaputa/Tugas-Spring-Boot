@@ -1,6 +1,6 @@
 package com.toko.tokoonline.model;
 
-import com.toko.tokoonline.auditable.Auditable;
+import com.toko.tokoonline.auditing.Auditable;
 
 import javax.persistence.*;
 
@@ -16,13 +16,13 @@ public class Barang extends Auditable {
     private String name;
 
     @Column(name = "price")
-    private Float price = 0f;
+    private Float price = 0f ;
 
     @Column(name = "count")
-    private Long count =0l;
+    private Long count = 0l;
 
     @Column(name = "reting")
-    private Long reting =0l ;
+    private Long reting = 0l;
 
     @Lob
     @Column(name = "deskripsi")

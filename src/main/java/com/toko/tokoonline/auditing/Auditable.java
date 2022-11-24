@@ -1,4 +1,4 @@
-package com.toko.tokoonline.auditable;
+package com.toko.tokoonline.auditing;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.CreationTimestamp;
@@ -16,13 +16,13 @@ public class Auditable {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @CreationTimestamp
-    @Column(name = "create_at",nullable = false, updatable = false)
+    @Column(name = "create_at", nullable = false, updatable = false)
     private Date createdAt;
-@LastModifiedDate
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "updated_at")
-    private Date updatedAt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @LastModifiedDate
+    @Column(name = "update_at")
+    private Date updatedAt;
 
     public Date getCreatedAt() {
         return createdAt;

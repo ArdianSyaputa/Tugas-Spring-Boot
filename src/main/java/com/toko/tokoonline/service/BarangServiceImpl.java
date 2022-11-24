@@ -31,8 +31,8 @@ public class BarangServiceImpl implements BarangService{
     public Object getBarang(Long id) {
         var barang = barangRepository.findById(id).orElseThrow(() -> new NotFoundException("Id Tidak Ditemukan"));
         try {
-            barang.setPrice(barang.getPrice() + 0);
-            barang.setReting(barang.getReting() + 0);
+            barang.setPrice(barang.getPrice()+ 0);
+            barang.setReting(barang.getReting()+ 0);
             return barangRepository.save(barang);
         } catch (Exception e) {
             throw  new InternalErrorException("Kesalahan Munculkan Data");

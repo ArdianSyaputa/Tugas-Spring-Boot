@@ -1,9 +1,9 @@
 package com.toko.tokoonline.swagger;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 @EnableWebMvc
-public class SwaggerConfig {
+public class SwaggerConfic {
 
     @Bean
     public Docket api() {
@@ -24,13 +24,12 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
-
     }
-    private  ApiInfo apiInfo() {
-        return new ApiInfo(
-                "API Documention",
-                "Example Documention",
-                "Example 1.0.8",
+
+    private ApiInfo apiInfo() {
+        return new ApiInfo("API Documentation",
+                "Example documentation",
+                "1.0.0",
                 "",
                 "",
                 "",
